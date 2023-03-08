@@ -8,8 +8,29 @@
 
 ![animepic](https://user-images.githubusercontent.com/65221687/223345024-103830fc-8b96-4003-832c-47191a4d0ed8.jpg)
 
+### Objective: 
 
-Classifying the synopses of animes as according to the MyAnimeList dataset according to the score of the anime was the primary directive of this project. Jupyter notebok, Amazon Web Services and Google Collaboration were used to create this project. This dataset was chosen from Kaggle, scrapped in 2022 and contained descriptive attributes of the anime (type, genre, themes, source, duration, score, and rank, etc.). While exploring the data, it was discovered that comedy was the most depicted genre, TV was the most depicted type, and Toei animation is the most prolific studio. However, there was not a high correlation between these fatures according to the correlation matrix heatmap. In order to compare the highly scored anime with the highest grossing movies, the Box Office Mojo site was scrapped using Beautiful Soup and explored. While preparing the data for modeling NLK (Natural Language Toolkit) was utilized in tokenizing, lemmatization, and navigating stop words in the text. After conducting a train-test split on the data in order to properly validate the models, the data was standardized using StandardScaler and then vectorized using CountVectorizer. FreqDist from the NLK package aided in displaying the most frequent words that appear throughout the tweets (source, one, one, write, mal). Basic Logistic Regression, Support Vector Machines, Stochastic Gradient Descent, Random Forest, Naive Nayes, and K-nearest Neighbors models were tested first. Although the highest recall recorded was only .50, hypertuning was performed on Random Forest, logistic Regression and Multinomial Naive Bayes, which is known for working well with NLP data. Unsupervised K-Means was also performed, which found 9 clusters and depicted them in a visualization, as well as word2vec which utilized t-distributed stochastic neighbor embedding (t-SNE) to show the distance of the words well. The last aspect was a recommendation system that takes in a name of an anime and gives 10 examples of similar anime in terms of genre and lists their scores. Overall, the models were quite low even the highest which was the hypertuned Logistic Regression model, so I don't recommend them. I recommend going through the data to add where Nan and Null is located as well as comparing the site against the recommendation system created here. The descriptive data can used well in writing synopses as well as marketing future anime well to gain new viewership to their site.
+Classifying the synopses of animes as according to the MyAnimeList dataset according to the score of the anime and creating a recommendation system.
+
+### Services utilized: 
+
+Analyses were performed on Jupyter notebok, Amazon Web Services and Google Collaboration. This dataset was chosen from Kaggle, scrapped in 2022 and contained descriptive attributes of the anime (type, genre, themes, source, duration, score, and rank, etc.). 
+
+### EDA of MYANIMELIST and Box Office Mojo: 
+
+Comedy was the most depicted genre, TV was the most depicted type, and Toei animation is the most prolific studio. However, there was not a high correlation between these fatures according to the correlation matrix heatmap. In order to compare the highly scored anime with the highest grossing movies, the Box Office Mojo site was scrapped using Beautiful Soup and explored. 
+
+### Preparation of Data:
+
+While preparing the data for modeling NLK (Natural Language Toolkit) was utilized in tokenizing, lemmatization, and navigating stop words in the text. After conducting a train-test split on the data in order to properly validate the models, the data was standardized using StandardScaler and then vectorized using CountVectorizer. FreqDist from the NLK package aided in displaying the most frequent words that appear throughout the tweets (source, one, one, write, mal). 
+
+### Modeling:
+
+Basic Logistic Regression, Support Vector Machines, Stochastic Gradient Descent, Random Forest, Naive Nayes, and K-nearest Neighbors models were tested first. Although the highest recall recorded was only .50, hypertuning was performed on Random Forest, logistic Regression and Multinomial Naive Bayes, which is known for working well with NLP data. Unsupervised K-Means was also performed, which found 9 clusters and depicted them in a visualization, as well as word2vec which utilized t-distributed stochastic neighbor embedding (t-SNE) to show the distance of the words well. 
+
+### Recommendation System:
+
+The recommendation system that takes in a name of an anime and gives 10 examples of similar anime in terms of genre and lists their scores. 
 
 ## Overview
 
@@ -54,6 +75,7 @@ This section will explore this dataset to better understand the patterns in the 
 ![image](https://user-images.githubusercontent.com/65221687/223339855-6bd97ee8-cfcb-4fff-aa79-c448e4720165.png)
 
 
+
 The top 10 scored anime of each type are depicted below. A few popular franchises stand out, such as Gintama, which is in the top 10 of every category but ONA. Violet Evergarden and Hunter X Hunter are also well represented. Specials are also scored lower than every other category.
 
 ![image](https://user-images.githubusercontent.com/65221687/223339998-f7cc8245-3bd4-4f95-88b5-738e1dc2855a.png)
@@ -81,15 +103,6 @@ This section will explore this dataset to better understand the patterns in the 
 
 ![image](https://user-images.githubusercontent.com/65221687/223340665-78204fb5-5bd1-433d-919d-cf3b3cc25d71.png)
 
-
-### EDA Theme of anime in MyAnimeList
-
-The most common themes throughout the dataset are displayed below. 
-
-![image](https://user-images.githubusercontent.com/65221687/223340849-590d94a4-af3c-4e9c-8684-ae15fc7f1e91.png)
-
-
-![newplot (2)](https://user-images.githubusercontent.com/65221687/223344604-5de3ba76-d5c5-4e5d-8e91-b8fed0c5fd35.png)
 
 ### EDA Genre of anime in MyAnimeList
 
@@ -119,7 +132,7 @@ This section will explore this dataset to better understand the patterns in the 
 - Music : created to accompany a song or album
 - Other
 
-![image](https://user-images.githubusercontent.com/65221687/223341583-e0264e5c-81f7-4dc3-b925-5d15dc8b59b1.png)
+<img src="https://user-images.githubusercontent.com/65221687/223341583-e0264e5c-81f7-4dc3-b925-5d15dc8b59b1.png" width="550" height="350">
 
 
 ### Dataset 2 : Box Office Mojo Anime
@@ -156,18 +169,18 @@ The hypertuned models's classificiation metrics are shown below in a bar chart. 
 Although unsupervised methods might be best suited to datasets containing more data and less labels, they can still aid in discovering more patterns and aspects of the data. The elbow method depicted below indicates that there are 9 clusters in our data and the centriods are depicted.
 
 
-![image](https://user-images.githubusercontent.com/65221687/223343357-4b4d8226-156e-4c57-abc6-541814725785.png)
-
-
 ![image](https://user-images.githubusercontent.com/65221687/223343413-85a4418b-2109-4a68-8088-a46a73fc6d24.png)
 
 
 ### Word2Vec Model
 
-![Screenshot (1)](https://user-images.githubusercontent.com/65221687/223348673-51d3b87b-69bd-494b-8e54-083be552403a.png)
-
 
 Word embeddings is a technique where individual words are transformed into a numerical representation of the word (a vector). Where each word is mapped to one vector, this vector is then learned in a way which resembles a neural network. The goal of this Word2Vec Model section is the word embed visualization at the end, in order to dislay the relationship between the words, the next cell sets up the model from the anime['clean_text'] text processed synopses of anime.
+
+
+![Untitled drawing (1)](https://user-images.githubusercontent.com/65221687/223787125-eda61c0d-d86c-4e4f-a957-0df317c8dfc7.png)
+
+
 
 
 ### Recommendation System
@@ -175,54 +188,48 @@ Word embeddings is a technique where individual words are transformed into a num
 
 A recommendation system using the library Surprise is able to recommend the most similar item to the one inputted. MyAnimeList was created in order to keep a list, talk to other fans, but also to find your next favorite anime! In order to do so, one can input an anime they enjoyed into this recommendation system and recieve10 similar anime along with their ratings.
 
-![animerecc](https://user-images.githubusercontent.com/65221687/223344943-ac9f349e-a365-41a7-b721-25c0d3957e8d.PNG)
+
+<img src="https://user-images.githubusercontent.com/65221687/223344943-ac9f349e-a365-41a7-b721-25c0d3957e8d.PNG" width="800" height="700">
 
 
 ### Word Cloud
 A fun way to visualize the most common words for each section is to utilize word clouds! There are 3 word clouds below that illustrate the most common words as bigger and the less common words as smaller.
 
-The word cloud below displays the most common genres that Toei Animation uses in their anime. Toei Animation was credited as the studio with the most anime, which is why it was chosen.
-
-![image](https://user-images.githubusercontent.com/65221687/223345623-4fef5133-3dd9-4ef0-a86d-9ac01b7d9a31.png)
-
-The word cloud below displays the most common genres that the movie type of anime uses in their anime. Sci Fi seems to be very prominent among movies!
-
-
-![image](https://user-images.githubusercontent.com/65221687/223345682-6202b89b-b110-4d18-af6f-393431cfa691.png)
-
-
 The word cloud below displays the most common genres for the MyAnimeList in general. Adventure, Comedy, Sci Fi, and Action Adventure are the biggest standouts.
 
-![image](https://user-images.githubusercontent.com/65221687/223345738-ede7b94b-e1ef-4d1d-8d1d-ae8a01e71e9e.png)
+
+<img src="https://user-images.githubusercontent.com/65221687/223345738-ede7b94b-e1ef-4d1d-8d1d-ae8a01e71e9e.png" width="750" height="300">
 
 
 ## Final Results
 
 ### Conclusion:
 
--  Although these models could be used to predict the score of an anime due to the synopsis, they are not deemed to be optimal models with low reliability in accuracy, precision, and recall. The hypertuning performed and the unsupervised K-means modeling did not improve the models enough to perform them upon new data.
+-  Although these models could be used to predict the score of an anime due to the synopsis, they are not deemed to be optimal models with low reliability in accuracy, precision, and recall.
 
--  The exploratory analysis exposed interesting trends in the most commonly listed Studio, Source of the anime, Type of anime, as well as genres and themes. These can be used in marketing and improving the site for visitors.
+- The exploratory analysis exposed interesting trends in the most commonly listed Studio, Source of the anime, Type of anime, as well as genres and themes. These can be used in marketing and improving the site for visitors.
 
--  A recommendation model was created in order to display the best next anime for someone who enjoyed the anime they inputted. It also helpfully has the score of the anime there for those who find importance in scores.
+- A recommendation model was created in order to display the best next anime for viewers. 
+
 
 ### Recommendations:
 
-- The most frequent words, especially the top 10 of 'source', 'one', 'world', 'write', 'mal', 'rewrite', 'school', 'girl', 'new', 'life' can be utilized to better understand that many anime are based in schools with a high number of girl characters. This can be used for marketing certain anime or to ensure that a synopsis will meet
-
-- There are many Nan and Null data and even 'unknown', it would be a good use of time to fill those in with meaningful information in order to perform a better analysis of the entire dataset.
+- The most frequent words, especially the top 10 of 'source', 'one', 'world', 'write', 'mal', 'rewrite', 'school', 'girl', 'new', 'life' can be utilized for marketing certain anime or to ensure that a synopsis will meet certain criteria by including these words.
 
 - The recommendation model created could be used to better ensure that the recommendations on MyAnimeList site are up to date and make sense according to the dataset and not just someone's opinion.
 
-- Utilizing other types of data such as Box office gross could add more variety of information to MyAnimeList.
+- Utilizing other aspects of anime, such as box office gross winnings, could be implemented into MyAnimeList for more variety of information.
 
 ### Next Steps:
 
-- I would like to combine this dataset with more data from other anime list and recommendation sites, such as Anime_Planet or Anilist. Since they do not allow web scraping, I would reach out for the information.
+- Combine this dataset with more data from other anime list and recommendation sites, such as Anime_Planet or Anilist. 
 
-- I would like to look at the other information on MyAnimeList such as Manga, Manhua, and Manhwa (Japanese, Chinese, and Korean comics) to understand their patterns, modeling and make a recommendation system for them as well.
+- Delve into other information on MyAnimeList such as Manga, Manhua, and Manhwa to understand their patterns, modeling and make a recommendation system for them as well.
 
-- I would utilize other hypertuned models after adding more data to model genres upon the synopses to predict the genres based on the synopses.
+- Fill in many Nan/ Null data and 'unknown' items with meaningful information in order to perform a better analysis of the entire dataset.
+
+- Utilize other hypertuned models after adding more data to model genres upon the synopses to create useful models.
+
 
 # For More Information
 See the full analysis in the [Jupyter Notebook](https://github.com/rabrya0072/Anime-Analysis/blob/main/Anime%20Analysis.ipynb) or [presentation](https://github.com/rabrya0072/Anime-Analysis/blob/main/Presentation.pdf) in this repository.
