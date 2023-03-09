@@ -239,8 +239,8 @@ For additional info, contact Rachael Bryant at Rachaelbryant94@gmail.com
 ├── Data
 ├── Images
 ├── gitignore
+├── Anime Analysis Capstone.pdf
 ├── Anime Analysis.ipynb
-├── Presentation.pdf
 ├── README.md
 
 
