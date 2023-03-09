@@ -178,8 +178,7 @@ Although unsupervised methods might be best suited to datasets containing more d
 Word embeddings is a technique where individual words are transformed into a numerical representation of the word (a vector). Where each word is mapped to one vector, this vector is then learned in a way which resembles a neural network. The goal of this Word2Vec Model section is the word embed visualization at the end, in order to dislay the relationship between the words, the next cell sets up the model from the anime['clean_text'] text processed synopses of anime.
 
 
-![Untitled drawing (1)](https://user-images.githubusercontent.com/65221687/223787125-eda61c0d-d86c-4e4f-a957-0df317c8dfc7.png)
-
+![Untitled drawing](https://user-images.githubusercontent.com/65221687/224122279-0254fc6e-751f-4988-9bea-653e67806baf.png)
 
 
 
@@ -189,7 +188,8 @@ Word embeddings is a technique where individual words are transformed into a num
 A recommendation system using the library Surprise is able to recommend the most similar item to the one inputted. MyAnimeList was created in order to keep a list, talk to other fans, but also to find your next favorite anime! In order to do so, one can input an anime they enjoyed into this recommendation system and recieve10 similar anime along with their ratings.
 
 
-<img src="https://user-images.githubusercontent.com/65221687/223344943-ac9f349e-a365-41a7-b721-25c0d3957e8d.PNG" width="800" height="700">
+![Untitled drawing (1)](https://user-images.githubusercontent.com/65221687/224122250-ae55dd10-c259-4f17-ad1f-84bec0aa85ce.png)
+
 
 
 ### Word Cloud
